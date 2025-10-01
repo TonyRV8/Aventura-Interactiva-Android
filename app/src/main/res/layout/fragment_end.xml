@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fragment del End con diseño espacial -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0A"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌌 THE END"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#DDA0DD"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dimensión del vacío y el dragón"
+            android:textSize="16sp"
+            android:textColor="#9370DB"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Puntos de Interés -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📍 Lugares del Vacío"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#DDA0DD"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Botón POI 1 -->
+        <Button
+            android:id="@+id/btn_poi_end_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🐉 Isla Principal"
+            android:textSize="16sp"
+            android:backgroundTint="#4B0082"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"
+            android:padding="16dp" />
+
+        <!-- Botón POI 2 -->
+        <Button
+            android:id="@+id/btn_poi_end_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🗼 Torres de Obsidiana"
+            android:textSize="16sp"
+            android:backgroundTint="#2F4F4F"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"
+            android:padding="16dp" />
+
+        <!-- Botón POI 3 -->
+        <Button
+            android:id="@+id/btn_poi_end_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🌃 Ciudades del End"
+            android:textSize="16sp"
+            android:backgroundTint="#8A2BE2"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"
+            android:padding="16dp" />
+
+        <!-- Botón POI 4 -->
+        <Button
+            android:id="@+id/btn_poi_end_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🚢 Barco del End"
+            android:textSize="16sp"
+            android:backgroundTint="#483D8B"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="32dp"
+            android:padding="16dp" />
+
+        <!-- Portal de regreso -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌀 Regresar al Overworld"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#9370DB"
+            android:layout_marginBottom="16dp" />
+
+        <!-- ImageView clickeable para regresar (end2.png) - Tamaño original -->
+        <ImageView
+            android:id="@+id/img_back_overworld_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/end2"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Regresar al Overworld" />
+
+    </LinearLayout>
+
+</ScrollView>

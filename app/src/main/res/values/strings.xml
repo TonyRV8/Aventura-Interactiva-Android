@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aventura Interactiva</string>
+
+    <!-- Overworld -->
+    <string name="overworld_title">Overworld</string>
+    <string name="overworld_subtitle">Explora el mundo superior</string>
+
+    <!-- Nether -->
+    <string name="nether_title">The Nether</string>
+    <string name="nether_subtitle">Dimensión del fuego y peligro</string>
+
+    <!-- End -->
+    <string name="end_title">The End</string>
+    <string name="end_subtitle">Dimensión del vacío y el dragón</string>
+
+    <!-- Botones -->
+    <string name="btn_enter_portal">Entrar al Portal</string>
+    <string name="btn_close">Cerrar</string>
+    <string name="btn_complete">Completar Aventura</string>
+</resources>

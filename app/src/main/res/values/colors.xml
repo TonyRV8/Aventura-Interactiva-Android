@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores del Overworld -->
+    <color name="overworld_sky">#87CEEB</color>
+    <color name="overworld_grass">#2D5016</color>
+    <color name="overworld_forest">#6B8E23</color>
+
+    <!-- Colores del Nether -->
+    <color name="nether_red">#8B0000</color>
+    <color name="nether_fire">#FF4500</color>
+    <color name="nether_crimson">#DC143C</color>
+
+    <!-- Colores del End -->
+    <color name="end_void">#0A0A0A</color>
+    <color name="end_purple">#DDA0DD</color>
+    <color name="end_crystal">#00FFFF</color>
+
+    <!-- Colores base de Material Design -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fragment del Nether con diseño infernal -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8B0000"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔥 THE NETHER"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#FF4500"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dimensión del fuego y peligro"
+            android:textSize="16sp"
+            android:textColor="#FFD700"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Puntos de Interés -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📍 Lugares Infernales"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FF4500"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Botón POI 1 -->
+        <Button
+            android:id="@+id/btn_poi_nether_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔥 Fortaleza del Nether"
+            android:textSize="16sp"
+            android:backgroundTint="#B22222"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"
+            android:padding="16dp" />
+
+        <!-- Botón POI 2 -->
+        <Button
+            android:id="@+id/btn_poi_nether_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🍄 Bosque Carmesí"
+            android:textSize="16sp"
+            android:backgroundTint="#DC143C"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"
+            android:padding="16dp" />
+
+        <!-- Botón POI 3 -->
+        <Button
+            android:id="@+id/btn_poi_nether_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💀 Valle de Almas"
+            android:textSize="16sp"
+            android:backgroundTint="#4B0082"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"
+            android:padding="16dp" />
+
+        <!-- Botón POI 4 -->
+        <Button
+            android:id="@+id/btn_poi_nether_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🏛️ Bastión"
+            android:textSize="16sp"
+            android:backgroundTint="#8B4513"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="32dp"
+            android:padding="16dp" />
+
+        <!-- Portal de regreso al Overworld -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌀 Regresar al Overworld"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFD700"
+            android:layout_marginBottom="16dp" />
+
+        <!-- ImageView clickeable para regresar (GIF Nether) - Tamaño original -->
+        <ImageView
+            android:id="@+id/img_back_overworld"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/nether"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Regresar al Overworld" />
+
+    </LinearLayout>
+
+</ScrollView>
