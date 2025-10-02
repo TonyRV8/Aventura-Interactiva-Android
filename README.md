@@ -152,8 +152,7 @@ AventuraInteractiva/
 
 ## 🎬 Video Demostrativo
 
-[![Video Demo](https://img.youtube.com/shorts/lV8JLI6Z8EU/maxresdefault.jpg)](https://www.youtube.com/shorts/lV8JLI6Z8EU)
-
+[![Ver Demo](https://img.shields.io/badge/▶️-Ver_Demo_en_YouTube-red?style=for-the-badge&logo=youtube)](https://youtube.com/shorts/lV8JLI6Z8EU)
 
 ## 📸 Capturas de pantalla
 
