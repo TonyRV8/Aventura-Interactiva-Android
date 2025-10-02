@@ -3,7 +3,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0A0A0A"
+    android:id="@+id/end_scroll"
     android:padding="16dp">
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:text="🌌 THE END"
             android:textSize="32sp"
             android:textStyle="bold"
-            android:textColor="#DDA0DD"
+            android:id="@+id/end_title"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="16dp" />
 
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="Dimensión del vacío y el dragón"
             android:textSize="16sp"
-            android:textColor="#9370DB"
+            android:id="@+id/end_subtitle"
             android:layout_marginBottom="32dp" />
 
         <!-- Puntos de Interés -->
@@ -38,7 +38,7 @@
             android:text="📍 Lugares del Vacío"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#DDA0DD"
+            android:id="@+id/end_poi_title"
             android:layout_marginBottom="16dp" />
 
         <!-- Botón POI 1 -->
@@ -96,7 +96,7 @@
             android:text="🌀 Regresar al Overworld"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#9370DB"
+            android:id="@+id/end_back_title"
             android:layout_marginBottom="16dp" />
 
         <!-- ImageView clickeable para regresar (end2.png) - Tamaño original -->

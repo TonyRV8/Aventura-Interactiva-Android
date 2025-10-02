@@ -12,12 +12,11 @@ import com.example.aventurainteractiva.fragments.NetherFragment
 class NetherActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // IMPORTANTE: Aplicar el tema ANTES de setContentView
+        ThemeManager.applyTheme(this)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nether)
-
-        // Configurar botón de regreso personalizado
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "🔥 The Nether"
 
         // Cargar el Fragment del Nether
         if (savedInstanceState == null) {
@@ -36,15 +35,6 @@ class NetherActivity : AppCompatActivity() {
         startActivity(intent)
         // Animación más dramática para el portal del End
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-    }
-
-    /**
-     * Regresar al Overworld con animación inversa
-     */
-    override fun onSupportNavigateUp(): Boolean {
-        finish()
-        overridePendingTransition(R.anim.portal_exit, R.anim.portal_enter)
-        return true
     }
 
     @Deprecated("Deprecated in Java")

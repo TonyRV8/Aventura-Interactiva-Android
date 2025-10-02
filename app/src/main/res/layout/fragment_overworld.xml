@@ -1,147 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Fragment del Overworld con diseño de paisaje verde -->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#87CEEB"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <!-- Imagen de fondo (day.jpg por defecto, cambia con tema) -->
+    <ImageView
+        android:id="@+id/background_image"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:contentDescription="Background"
+        android:src="@drawable/day" />
 
-        <!-- Título -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="🌍 OVERWORLD"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:textColor="#2D5016"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="16dp" />
+    <!-- Overlay semi-transparente para mejorar legibilidad -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#40FFFFFF" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Explora el mundo superior"
-            android:textSize="16sp"
-            android:textColor="#555555"
-            android:layout_marginBottom="32dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
-        <!-- Puntos de Interés -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="📍 Puntos de Interés"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#2D5016"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Botón POI 1 -->
-        <Button
-            android:id="@+id/btn_poi_1"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="🌳 Bosque de Robles"
-            android:textSize="16sp"
-            android:backgroundTint="#6B8E23"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="12dp"
-            android:padding="16dp" />
+            android:orientation="vertical"
+            android:gravity="center">
 
-        <!-- Botón POI 2 -->
-        <Button
-            android:id="@+id/btn_poi_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="⛰️ Montañas"
-            android:textSize="16sp"
-            android:backgroundTint="#8B7355"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="12dp"
-            android:padding="16dp" />
+            <!-- Título -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🌍 OVERWORLD"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="#2D5016"
+                android:shadowColor="#FFFFFF"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="4"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp" />
 
-        <!-- Botón POI 3 -->
-        <Button
-            android:id="@+id/btn_poi_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="🌊 Océano Profundo"
-            android:textSize="16sp"
-            android:backgroundTint="#1E90FF"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="12dp"
-            android:padding="16dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Explora el mundo superior"
+                android:textSize="16sp"
+                android:textColor="#555555"
+                android:background="#CCFFFFFF"
+                android:padding="8dp"
+                android:layout_marginBottom="16dp" />
 
-        <!-- Botón POI 4 -->
-        <Button
-            android:id="@+id/btn_poi_4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="🏰 Aldea"
-            android:textSize="16sp"
-            android:backgroundTint="#D2691E"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="32dp"
-            android:padding="16dp" />
+            <!-- Switch de Modo Oscuro -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="#CC000000"
+                android:padding="12dp"
+                android:layout_marginBottom="32dp"
+                android:elevation="4dp">
 
-        <!-- Portal al Nether -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="🌀 Portales"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#4B0082"
-            android:layout_marginBottom="16dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌙 Modo Oscuro"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="12dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Portal al Nether"
-            android:textSize="16sp"
-            android:textColor="#8B008B"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
+                <Switch
+                    android:id="@+id/switch_theme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false" />
+            </LinearLayout>
 
-        <!-- ImageView clickeable para Nether (GIF) - Tamaño original -->
-        <ImageView
-            android:id="@+id/img_portal_nether"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/nether"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:layout_marginBottom="24dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:contentDescription="Portal al Nether" />
+            <!-- Puntos de Interés -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📍 Puntos de Interés"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2D5016"
+                android:background="#CCFFFFFF"
+                android:padding="8dp"
+                android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Portal al End"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
+            <!-- Botón POI 1 -->
+            <Button
+                android:id="@+id/btn_poi_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🌳 Bosque de Robles"
+                android:textSize="16sp"
+                android:backgroundTint="#6B8E23"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="12dp"
+                android:padding="16dp" />
 
-        <!-- ImageView clickeable para End (PNG) - Tamaño original -->
-        <ImageView
-            android:id="@+id/img_portal_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/end"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:contentDescription="Portal al End" />
+            <!-- Botón POI 2 -->
+            <Button
+                android:id="@+id/btn_poi_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⛰️ Montañas"
+                android:textSize="16sp"
+                android:backgroundTint="#8B7355"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="12dp"
+                android:padding="16dp" />
 
-    </LinearLayout>
+            <!-- Botón POI 3 -->
+            <Button
+                android:id="@+id/btn_poi_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🌊 Océano Profundo"
+                android:textSize="16sp"
+                android:backgroundTint="#1E90FF"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="12dp"
+                android:padding="16dp" />
 
-</ScrollView>
+            <!-- Botón POI 4 -->
+            <Button
+                android:id="@+id/btn_poi_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🏰 Aldea"
+                android:textSize="16sp"
+                android:backgroundTint="#D2691E"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="32dp"
+                android:padding="16dp" />
+
+            <!-- Portal al Nether -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🌀 Portales"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#4B0082"
+                android:background="#CCFFFFFF"
+                android:padding="8dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Portal al Nether"
+                android:textSize="16sp"
+                android:textColor="#8B008B"
+                android:textStyle="bold"
+                android:background="#CCFFFFFF"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- ImageView clickeable para Nether (GIF) - Tamaño original -->
+            <ImageView
+                android:id="@+id/img_portal_nether"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/nether"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_marginBottom="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Portal al Nether" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Portal al End"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:background="#CCFFFFFF"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- ImageView clickeable para End (PNG) - Tamaño original -->
+            <ImageView
+                android:id="@+id/img_portal_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/end"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Portal al End" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

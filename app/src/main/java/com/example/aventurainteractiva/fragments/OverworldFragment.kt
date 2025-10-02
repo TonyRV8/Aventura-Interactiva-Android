@@ -9,19 +9,23 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Switch
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.aventurainteractiva.EndActivity
 import com.example.aventurainteractiva.MainActivity
-import com.example.aventurainteractiva.NetherActivity
 import com.example.aventurainteractiva.R
+import com.example.aventurainteractiva.ThemeManager
 import com.example.aventurainteractiva.models.PointOfInterest
 
 /**
  * Fragment del Overworld - Contiene los puntos de interés del mundo superior
  */
 class OverworldFragment : Fragment() {
+
+    private lateinit var themeSwitch: Switch
+    private lateinit var backgroundImage: ImageView
 
     // Lista de puntos de interés del Overworld
     private val pointsOfInterest = listOf(
@@ -61,6 +65,27 @@ class OverworldFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Obtener referencia a la imagen de fondo
+        backgroundImage = view.findViewById(R.id.background_image)
+
+        // Aplicar el fondo correcto según el tema actual
+        updateBackground()
+
+        // Configurar el Switch de tema
+        themeSwitch = view.findViewById(R.id.switch_theme)
+        themeSwitch.isChecked = ThemeManager.isDarkModeEnabled(requireContext())
+
+        themeSwitch.setOnCheckedChangeListener { _, isChecked ->
+            // Guardar la preferencia
+            ThemeManager.saveDarkModePreference(requireContext(), isChecked)
+
+            // Cambiar el fondo inmediatamente
+            updateBackground()
+
+            // Recrear la actividad para aplicar el nuevo tema en todas las pantallas
+            activity?.recreate()
+        }
 
         // Configurar botones de puntos de interés
         view.findViewById<Button>(R.id.btn_poi_1)?.setOnClickListener {
@@ -104,6 +129,17 @@ class OverworldFragment : Fragment() {
                 startActivity(intent)
                 activity?.overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
             }, 400)
+        }
+    }
+
+    /**
+     * Actualiza la imagen de fondo según el tema actual
+     */
+    private fun updateBackground() {
+        if (ThemeManager.isDarkModeEnabled(requireContext())) {
+            backgroundImage.setImageResource(R.drawable.night)
+        } else {
+            backgroundImage.setImageResource(R.drawable.day)
         }
     }
 

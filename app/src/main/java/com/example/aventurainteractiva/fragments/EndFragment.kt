@@ -8,9 +8,12 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.ScrollView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.aventurainteractiva.R
+import com.example.aventurainteractiva.ThemeManager
 import com.example.aventurainteractiva.models.PointOfInterest
 
 /**
@@ -57,6 +60,9 @@ class EndFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Aplicar colores según el tema
+        applyThemeColors(view)
+
         // Configurar botones de puntos de interés
         view.findViewById<Button>(R.id.btn_poi_end_1)?.setOnClickListener {
             showPoiDialog(pointsOfInterest[0])
@@ -81,6 +87,36 @@ class EndFragment : Fragment() {
                 activity?.finish()
                 activity?.overridePendingTransition(R.anim.fade_out, R.anim.fade_in)
             }, 400)
+        }
+    }
+
+    /**
+     * Aplica los colores según el tema activo
+     */
+    private fun applyThemeColors(view: View) {
+        val isDarkMode = ThemeManager.isDarkModeEnabled(requireContext())
+
+        // Obtener referencias a los elementos
+        val scrollView = view.findViewById<ScrollView>(R.id.end_scroll)
+        val title = view.findViewById<TextView>(R.id.end_title)
+        val subtitle = view.findViewById<TextView>(R.id.end_subtitle)
+        val poiTitle = view.findViewById<TextView>(R.id.end_poi_title)
+        val backTitle = view.findViewById<TextView>(R.id.end_back_title)
+
+        if (isDarkMode) {
+            // Tema oscuro - Violeta más intenso
+            scrollView.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.end_dark_background))
+            title.setTextColor(ContextCompat.getColor(requireContext(), R.color.end_dark_text))
+            subtitle.setTextColor(ContextCompat.getColor(requireContext(), R.color.end_dark_text))
+            poiTitle.setTextColor(ContextCompat.getColor(requireContext(), R.color.end_dark_text))
+            backTitle.setTextColor(ContextCompat.getColor(requireContext(), R.color.end_dark_text))
+        } else {
+            // Tema claro - Negro/púrpura original
+            scrollView.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.end_light_background))
+            title.setTextColor(ContextCompat.getColor(requireContext(), R.color.end_light_text))
+            subtitle.setTextColor(ContextCompat.getColor(requireContext(), android.R.color.holo_purple))
+            poiTitle.setTextColor(ContextCompat.getColor(requireContext(), R.color.end_light_text))
+            backTitle.setTextColor(ContextCompat.getColor(requireContext(), android.R.color.holo_purple))
         }
     }
 

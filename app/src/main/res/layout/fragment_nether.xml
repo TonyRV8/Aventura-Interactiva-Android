@@ -3,7 +3,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8B0000"
+    android:id="@+id/nether_scroll"
     android:padding="16dp">
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:text="🔥 THE NETHER"
             android:textSize="32sp"
             android:textStyle="bold"
-            android:textColor="#FF4500"
+            android:id="@+id/nether_title"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="16dp" />
 
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="Dimensión del fuego y peligro"
             android:textSize="16sp"
-            android:textColor="#FFD700"
+            android:id="@+id/nether_subtitle"
             android:layout_marginBottom="32dp" />
 
         <!-- Puntos de Interés -->
@@ -38,7 +38,7 @@
             android:text="📍 Lugares Infernales"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#FF4500"
+            android:id="@+id/nether_poi_title"
             android:layout_marginBottom="16dp" />
 
         <!-- Botón POI 1 -->
@@ -96,7 +96,7 @@
             android:text="🌀 Regresar al Overworld"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#FFD700"
+            android:id="@+id/nether_back_title"
             android:layout_marginBottom="16dp" />
 
         <!-- ImageView clickeable para regresar (GIF Nether) - Tamaño original -->

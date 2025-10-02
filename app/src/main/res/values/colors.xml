@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Colores del Overworld -->
-    <color name="overworld_sky">#87CEEB</color>
-    <color name="overworld_grass">#2D5016</color>
-    <color name="overworld_forest">#6B8E23</color>
+    <!-- Colores del Tema Claro - Overworld -->
+    <color name="overworld_light_primary">#87CEEB</color>
+    <color name="overworld_light_text">#2D5016</color>
+    <color name="overworld_light_secondary">#6B8E23</color>
 
-    <!-- Colores del Nether -->
-    <color name="nether_red">#8B0000</color>
-    <color name="nether_fire">#FF4500</color>
-    <color name="nether_crimson">#DC143C</color>
+    <!-- Colores del Tema Oscuro - Overworld -->
+    <color name="overworld_dark_primary">#1A1A2E</color>
+    <color name="overworld_dark_text">#EAEAEA</color>
+    <color name="overworld_dark_secondary">#16213E</color>
 
-    <!-- Colores del End -->
-    <color name="end_void">#0A0A0A</color>
-    <color name="end_purple">#DDA0DD</color>
-    <color name="end_crystal">#00FFFF</color>
+    <!-- Colores del Nether - Tema Claro -->
+    <color name="nether_light_background">#8B0000</color>
+    <color name="nether_light_text">#FF4500</color>
+
+    <!-- Colores del Nether - Tema Oscuro (con tono violeta) -->
+    <color name="nether_dark_background">#4A0E4E</color>
+    <color name="nether_dark_text">#DA70D6</color>
+
+    <!-- Colores del End - Tema Claro -->
+    <color name="end_light_background">#0A0A0A</color>
+    <color name="end_light_text">#DDA0DD</color>
+
+    <!-- Colores del End - Tema Oscuro (con tono violeta más intenso) -->
+    <color name="end_dark_background">#1A0033</color>
+    <color name="end_dark_text">#E6B3FF</color>
 
     <!-- Colores base de Material Design -->
     <color name="purple_200">#FFBB86FC</color>

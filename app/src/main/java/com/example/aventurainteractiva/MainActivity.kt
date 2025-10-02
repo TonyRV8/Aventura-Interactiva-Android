@@ -12,6 +12,9 @@ import com.example.aventurainteractiva.fragments.OverworldFragment
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // IMPORTANTE: Aplicar el tema ANTES de setContentView
+        ThemeManager.applyTheme(this)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
