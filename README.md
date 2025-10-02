@@ -70,10 +70,6 @@ Esta aplicación es una aventura interactiva desarrollada en Android que permite
    - Botones estilizados con drawables personalizados
    - Diseño Material Design para consistencia visual
 
-### Paleta de colores:
-- **Color primario**: [#XXXXXX] - Utilizado en la barra de acción y elementos principales
-- **Color secundario**: [#XXXXXX] - Para botones y elementos de acción
-- **Color de fondo**: [#XXXXXX] - Mantiene la legibilidad y atmósfera de la aventura
 
 ## 🔧 Retos y Soluciones
 
@@ -86,56 +82,6 @@ Esta aplicación es una aventura interactiva desarrollada en Android que permite
 **Problema**: Al intentar mostrar imágenes GIF animadas en la aplicación, estas no se visualizaban correctamente o aparecían distorsionadas, sin respetar su tamaño original. Esto afectaba la experiencia visual y la inmersión del jugador en la aventura, ya que los GIFs son elementos importantes para dar vida a las diferentes dimensiones.
 
 **Solución**: Se investigó sobre las bibliotecas disponibles para manejar GIFs en Android y se implementó Glide, una biblioteca de carga de imágenes optimizada. Se configuró Glide para cargar los GIFs de manera eficiente y se ajustaron los parámetros del ImageView en los layouts XML para que respetaran las dimensiones originales de las imágenes. También se utilizaron los atributos adecuados de escala (scaleType) para mantener la proporción correcta sin distorsión, logrando que los GIFs se vean nítidos y con el tamaño apropiado en diferentes tamaños de pantalla.
-
-## 📱 Estructura del proyecto
-
-AventuraInteractiva/
-│
-├── app/
-│   ├── src/
-│   │   └── main/
-│   │       ├── java/com/example/aventurainteractiva/
-│   │       │   ├── MainActivity.kt
-│   │       │   ├── NetherActivity.kt
-│   │       │   ├── EndActivity.kt
-│   │       │   ├── ThemeManager.kt
-│   │       │   ├── fragments/
-│   │       │   │   ├── OverworldFragment.kt
-│   │       │   │   ├── NetherFragment.kt
-│   │       │   │   └── EndFragment.kt
-│   │       │   └── models/
-│   │       │       └── PointOfInterest.kt
-│   │       │
-│   │       ├── res/
-│   │       │   ├── anim/
-│   │       │   │   ├── portal_enter.xml
-│   │       │   │   ├── portal_exit.xml
-│   │       │   │   ├── fade_in.xml
-│   │       │   │   └── fade_out.xml
-│   │       │   ├── drawable/
-│   │       │   │   ├── day.jpg
-│   │       │   │   ├── night.jpg
-│   │       │   │   ├── nether.gif
-│   │       │   │   ├── end.png
-│   │       │   │   └── end2.png
-│   │       │   ├── layout/
-│   │       │   │   ├── activity_main.xml
-│   │       │   │   ├── activity_nether.xml
-│   │       │   │   ├── activity_end.xml
-│   │       │   │   ├── fragment_overworld.xml
-│   │       │   │   ├── fragment_nether.xml
-│   │       │   │   ├── fragment_end.xml
-│   │       │   │   └── dialog_poi_info.xml
-│   │       │   └── values/
-│   │       │       ├── colors.xml
-│   │       │       ├── strings.xml
-│   │       │       └── themes.xml
-│   │       │
-│   │       └── AndroidManifest.xml
-│   │
-│   └── build.gradle.kts
-│
-├── gradle/
 
 
 ## 🛠️ Tecnologías utilizadas
