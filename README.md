@@ -5,6 +5,7 @@ Una aplicación Android de aventura interactiva donde el usuario puede explorar 
 ## 📋 Descripción
 
 Esta aplicación es una aventura interactiva desarrollada en Android que permite al usuario sumergirse en un mundo cúbico. A través de múltiples pantallas y opciones, el jugador navega por diferentes escenarios.
+**Cambio de tema Oscuro/Claro** Simplemente basta con activar el boton switch y se mantendrá guardado.
 
 ### Características principales:
 - **Interfaz intuitiva**: Diseño limpio y fácil de navegar
