@@ -9,6 +9,8 @@ Esta aplicación es una aventura interactiva desarrollada en Android que permite
 ### Características principales:
 - **Interfaz intuitiva**: Diseño limpio y fácil de navegar
 - **Transiciones fluidas**: Animaciones suaves entre pantallas
+- **Sistema de temas**: Modo claro y oscuro con persistencia
+- **SharedPreferences**: Almacenamiento de preferencia de tema
 
 ## 🚀 Instrucciones para ejecutar el proyecto
 
@@ -59,8 +61,9 @@ Esta aplicación es una aventura interactiva desarrollada en Android que permite
    - [Agregar otras animaciones específicas]
 
 3. **Gestión del estado**
-   - Uso de `Bundle` en `onSaveInstanceState()` para preservar el progreso
-   - Variables globales o SharedPreferences para persistencia de datos [si aplica]
+   - **ThemeManager**: Singleton que maneja el estado global del tema
+   - **SharedPreferences**: Persistencia local de preferencias
+   - **Activity Lifecycle**: Los temas se aplican en onCreate() antes de setContentView()
 
 4. **Interfaz de usuario**
    - Layouts responsivos usando `ConstraintLayout`
@@ -86,34 +89,59 @@ Esta aplicación es una aventura interactiva desarrollada en Android que permite
 
 ## 📱 Estructura del proyecto
 
-```
-app/
-├── src/
-│   ├── main/
-│   │   ├── java/com/[paquete]/
-│   │   │   ├── MainActivity.java
-│   │   │   ├── [OtrasActividades].java
-│   │   │   └── ...
-│   │   ├── res/
-│   │   │   ├── layout/
-│   │   │   │   ├── activity_main.xml
-│   │   │   │   └── ...
-│   │   │   ├── values/
-│   │   │   │   ├── strings.xml
-│   │   │   │   ├── colors.xml
-│   │   │   │   └── themes.xml
-│   │   │   └── drawable/
-│   │   └── AndroidManifest.xml
-│   └── ...
-└── build.gradle
-```
+AventuraInteractiva/
+│
+├── app/
+│   ├── src/
+│   │   └── main/
+│   │       ├── java/com/example/aventurainteractiva/
+│   │       │   ├── MainActivity.kt
+│   │       │   ├── NetherActivity.kt
+│   │       │   ├── EndActivity.kt
+│   │       │   ├── ThemeManager.kt
+│   │       │   ├── fragments/
+│   │       │   │   ├── OverworldFragment.kt
+│   │       │   │   ├── NetherFragment.kt
+│   │       │   │   └── EndFragment.kt
+│   │       │   └── models/
+│   │       │       └── PointOfInterest.kt
+│   │       │
+│   │       ├── res/
+│   │       │   ├── anim/
+│   │       │   │   ├── portal_enter.xml
+│   │       │   │   ├── portal_exit.xml
+│   │       │   │   ├── fade_in.xml
+│   │       │   │   └── fade_out.xml
+│   │       │   ├── drawable/
+│   │       │   │   ├── day.jpg
+│   │       │   │   ├── night.jpg
+│   │       │   │   ├── nether.gif
+│   │       │   │   ├── end.png
+│   │       │   │   └── end2.png
+│   │       │   ├── layout/
+│   │       │   │   ├── activity_main.xml
+│   │       │   │   ├── activity_nether.xml
+│   │       │   │   ├── activity_end.xml
+│   │       │   │   ├── fragment_overworld.xml
+│   │       │   │   ├── fragment_nether.xml
+│   │       │   │   ├── fragment_end.xml
+│   │       │   │   └── dialog_poi_info.xml
+│   │       │   └── values/
+│   │       │       ├── colors.xml
+│   │       │       ├── strings.xml
+│   │       │       └── themes.xml
+│   │       │
+│   │       └── AndroidManifest.xml
+│   │
+│   └── build.gradle.kts
+│
+├── gradle/
+
 
 ## 🛠️ Tecnologías utilizadas
 
 - **Lenguaje**: Java
 - **IDE**: Android Studio
-- **SDK mínimo**: Android [versión]
-- **SDK objetivo**: Android [versión]
 - **Herramientas**: Git, Gradle
 
 ## 👨‍💻 Autor
@@ -122,23 +150,32 @@ app/
 
 ---
 
+## 🎬 Video Demostrativo
+
+[![Video Demo](https://img.youtube.com/shorts/lV8JLI6Z8EU/maxresdefault.jpg)](https://www.youtube.com/shorts/lV8JLI6Z8EU)
+
+
 ## 📸 Capturas de pantalla
 
 ### Overworld
-![Imagen de WhatsApp 2025-10-01 a las 15 02 20_1f1a584a](https://github.com/user-attachments/assets/f7cac2ae-dc47-492c-9dfe-2fff40f6c27f)
-![Imagen de WhatsApp 2025-10-01 a las 15 02 21_6e1dd2d3](https://github.com/user-attachments/assets/258bc3a5-44af-4b43-897f-e71124c95873)
+![Imagen de WhatsApp 2025-10-02 a las 14 24 26_38b35550](https://github.com/user-attachments/assets/218afa3e-cb7f-4db1-8043-68ca4bfdba2f)
+![Imagen de WhatsApp 2025-10-02 a las 14 24 27_de35a10e](https://github.com/user-attachments/assets/405af2b8-2313-46de-a987-a4b5b4c9c17c)
+![Imagen de WhatsApp 2025-10-02 a las 14 24 27_32a68012](https://github.com/user-attachments/assets/a14d9720-656a-4ef0-bf68-b8c68be30193)
 
-![Imagen de WhatsApp 2025-10-01 a las 15 02 19_d0443e01](https://github.com/user-attachments/assets/188c55e5-6366-4233-8ab0-1132163afb66)
 
 ### Nether
-![Imagen de WhatsApp 2025-10-01 a las 15 02 21_6b5db13b](https://github.com/user-attachments/assets/fda26492-cc79-440c-a5b2-044f7c73c939)
-![Imagen de WhatsApp 2025-10-01 a las 15 02 22_f3b43e91](https://github.com/user-attachments/assets/f09a9953-85cc-4811-b3d2-9d53d93ee011)
+![Imagen de WhatsApp 2025-10-02 a las 14 24 27_5584a2a0](https://github.com/user-attachments/assets/4cb7df4e-23db-4a60-92e3-64418f575401)
+![Imagen de WhatsApp 2025-10-02 a las 14 24 27_3fba0f52](https://github.com/user-attachments/assets/49548190-03f3-40bb-92c4-2106f58d8ca0)
 
 ### End
-![Imagen de WhatsApp 2025-10-01 a las 15 02 21_1957324e](https://github.com/user-attachments/assets/fd56d062-1421-4f61-aced-74bc88050b98)
-![Imagen de WhatsApp 2025-10-01 a las 15 02 22_cd2bea18](https://github.com/user-attachments/assets/8b753b7a-870d-470b-bcc9-892e3f92234b)
+![Imagen de WhatsApp 2025-10-02 a las 14 24 27_412300d1](https://github.com/user-attachments/assets/b3729fac-9205-49ea-813d-26141d3d04f9)
+![Imagen de WhatsApp 2025-10-02 a las 14 24 27_b4ffe054](https://github.com/user-attachments/assets/f4df35ad-9cee-4177-92a8-018904555090)
 
 
 ---
+
+
+
+
 
 ⭐ Si te gustó este proyecto, ¡dale una estrella en GitHub!
